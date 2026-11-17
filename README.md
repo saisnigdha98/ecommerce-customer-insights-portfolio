@@ -59,7 +59,29 @@ The largest segment is At Risk / Win-back. This is a behavioural prioritisation 
 | Hibernating - Selective Reactivation | 47 |
 | **Total** | **2,000** |
 
-A practical next step is to pilot different messages and offers across behavioural cohorts, include a holdout group, and measure campaign cost, incremental retention/conversion and margin before reallocating budget. The cohort labels are proposed strategies, not measured outcomes.
+## Marketing recommendations and proposed pilot budget
+
+**Recommendation:** start with a controlled retention and re-engagement pilot rather than spreading the budget evenly across all customers. The largest single behavioural group is At Risk / Win-back (615 customers, 30.75%). Needs Nurturing and Potential Loyal together account for another 973 customers (48.65%), giving the marketing team sizeable audiences to test for engagement and progression.
+
+The following is a **proposed starting allocation of the pilot campaign budget**. These percentages are strategic test assumptions based on segment size and intended treatment—not measured ROI, predicted revenue, or a statistically optimised budget.
+
+| Priority group | Customers | Proposed pilot budget | Recommended action |
+|---|---:|---:|---|
+| At Risk / Win-back | 615 (30.75%) | **35%** | Separate active preventive-retention messaging (363), paused-customer re-engagement (92), and cancelled-customer win-back (160). Test reminder-only messages against incentives before offering discounts broadly. |
+| Needs Nurturing | 538 (26.90%) | **30%** | Use lower-cost personalised content, product discovery, and follow-up messages. Test which touchpoints move customers toward repeat engagement. |
+| Potential Loyal | 435 (21.75%) | **20%** | Test relevant product recommendations, bundles, and loyalty milestones to encourage progression without relying on blanket discounts. |
+| Champions + Loyal | 294 (14.70%) | **10%** | Focus on retention and recognition, such as early access or modest loyalty benefits. Protect these relationships without assuming expensive rewards are necessary. |
+| Hibernating / Low Value | 118 (5.90%) | **5%** | Use automated, low-cost reactivation tests. Avoid high-cost manual outreach or large incentives unless early results justify further spend. |
+| **Total** | **2,000 (100%)** | **100%** | |
+
+### How the marketing team should decide what to scale
+
+1. **Create a holdout group within each segment.** Randomly withhold campaign contact for a portion of otherwise eligible customers, so results can be compared with customers who received the campaign.
+2. **Measure incremental outcomes, not just clicks.** Track incremental retention/reactivation or conversion against the holdout, cost per incremental retained/reactivated customer, discount cost, and incremental contribution margin after campaign costs.
+3. **Compare the three At Risk treatments separately.** Active, paused, and cancelled customers should not be treated as one interchangeable audience; report their results independently.
+4. **Reallocate only after evidence.** Increase budget for a segment only when the campaign produces positive incremental contribution after costs. Reduce or stop spend where results do not justify the expense.
+
+**What this analysis can and cannot conclude:** At Risk / Win-back is the largest single segment, while Needs Nurturing and Potential Loyal together represent nearly half the customer population. These findings support prioritising those groups for testing. They do **not** establish which group will deliver the highest ROI. The dataset does not include campaign spend, campaign response, control-group outcomes, or contribution margin, and its recorded order value is not verified lifetime revenue or profit. The proposed budget split should therefore be treated as a pilot hypothesis and revised using measured results.
 
 ## Demographic snapshot
 
