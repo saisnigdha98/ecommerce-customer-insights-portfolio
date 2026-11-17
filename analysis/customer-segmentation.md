@@ -1,58 +1,58 @@
 # Customer Segmentation and Campaign Cohort Analysis
 
 ## Population and method
-RFM analysis uses 1,021 of the 2,000 source records because 979 have contradictory order/last-purchase chronology. Reference date: **20 August 2025**. Recency is days since last purchase; frequency is the supplied `purchase_frequency`; monetary is the single-record `unit_price × quantity`. Quintile scores range from 1 (lowest) to 5 (highest).
 
-## RFM segment profile
+The updated RFM and campaign analysis includes **2,000 customers** (2,000 records and 2,000 distinct customer IDs). The fixed RFM reference date is **20 August 2025**. Recency is days since last purchase; frequency uses the supplied `purchase_frequency`; monetary value is the associated record's `unit_price × quantity`. Each metric is scored using five NTILE buckets; scores range from 1 to 5.
 
-| Segment | Customers | Avg. recency (days) | Avg. frequency | Avg. recorded value |
-|---|---:|---:|---:|---:|
-| At Risk / Win-back | 307 | 744.11 | 28.88 | 1,137.30 |
-| Needs Nurturing | 278 | 334.93 | 15.19 | 982.45 |
-| Potential Loyal | 215 | 127.26 | 25.21 | 883.96 |
-| Loyal | 80 | 249.14 | 38.03 | 1,257.72 |
-| Champions | 74 | 145.93 | 40.26 | 1,613.85 |
-| Hibernating / Low Value | 67 | 727.58 | 9.43 | 476.85 |
+The source has one customer-associated record per customer. Therefore, frequency is a supplied field and monetary value is a single-record measure, not a recomputed transaction count or lifetime spend.
 
-Champions have the highest average frequency and recorded value. At Risk / Win-back is the largest segment, with high average recorded value but also high average recency. These profiles support hypotheses for testing, not guaranteed future value.
+## RFM segment distribution
 
-## Campaign cohort summary
+| Segment | Customers | Customer share |
+|---|---:|---:|
+| At Risk / Win-back | 615 | 30.75% |
+| Needs Nurturing | 538 | 26.90% |
+| Potential Loyal | 435 | 21.75% |
+| Loyal | 161 | 8.05% |
+| Champions | 133 | 6.65% |
+| Hibernating / Low Value | 118 | 5.90% |
+| **Total** | **2,000** | **100.00%** |
 
-| Cohort | Customers | Customer share | Recorded value | Value share | Concentration index |
-|---|---:|---:|---:|---:|---:|
-| At Risk Active - Re-engagement | 189 | 18.51% | 220,957.25 | 20.76% | 1.12 |
-| Needs Nurturing - Engagement | 177 | 17.34% | 174,379.63 | 16.38% | 0.95 |
-| Potential Loyal - Growth | 136 | 13.32% | 118,019.93 | 11.09% | 0.83 |
-| Needs Nurturing - Reactivation | 101 | 9.89% | 98,741.44 | 9.28% | 0.94 |
-| At Risk Cancelled - Win-back | 64 | 6.27% | 74,822.43 | 7.03% | 1.12 |
-| Potential Loyal - Reactivation | 79 | 7.74% | 72,031.85 | 6.77% | 0.87 |
-| Champions - Protect | 39 | 3.82% | 62,776.71 | 5.90% | 1.54 |
-| Loyal Active - Reward | 51 | 5.00% | 62,166.49 | 5.84% | 1.17 |
-| Champions - Reactivation | 35 | 3.43% | 56,647.95 | 5.32% | 1.55 |
-| At Risk Paused - Re-engagement | 54 | 5.29% | 53,372.54 | 5.01% | 0.95 |
-| Loyal - Reactivation | 29 | 2.84% | 38,451.30 | 3.61% | 1.27 |
-| Hibernating - Selective Reactivation | 33 | 3.23% | 16,221.97 | 1.52% | 0.47 |
-| Hibernating - Low Cost Engagement | 34 | 3.33% | 15,726.80 | 1.48% | 0.44 |
+At Risk / Win-back is the largest group, followed by Needs Nurturing and Potential Loyal. These segments identify audiences for differentiated testing; they do not guarantee future value or response.
 
-Totals: 1,021 customers and 1,064,316.29 recorded order value. Concentration index = recorded-value share ÷ customer share; it is not ROI or profit.
+## Campaign cohort distribution
 
-## Proposed pilot budget hypothesis
-
-| Cohort | Proposed pilot share |
+| Campaign cohort | Customers |
 |---|---:|
-| At Risk Active - Re-engagement | 20% |
-| Needs Nurturing - Engagement | 15% |
-| Champions - Protect | 8% |
-| Champions - Reactivation | 7% |
-| Potential Loyal - Growth | 10% |
-| Needs Nurturing - Reactivation | 8% |
-| At Risk Cancelled - Win-back | 8% |
-| Potential Loyal - Reactivation | 6% |
-| Loyal Active - Reward | 6% |
-| At Risk Paused - Re-engagement | 5% |
-| Loyal - Reactivation | 4% |
-| Hibernating - Selective Reactivation | 1.5% |
-| Hibernating - Low Cost Engagement | 1.5% |
-| **Total** | **100%** |
+| At Risk Active - Preventive Retention | 363 |
+| Needs Nurturing - Engagement | 322 |
+| Potential Loyal - Growth | 280 |
+| Needs Nurturing - Reactivation | 216 |
+| At Risk Cancelled - Win-back | 160 |
+| Potential Loyal - Reactivation | 155 |
+| Loyal Active - Reward | 99 |
+| At Risk Paused - Re-engagement | 92 |
+| Hibernating - Low Cost Engagement | 71 |
+| Champions - Protect | 69 |
+| Champions - Reactivation | 64 |
+| Loyal - Reactivation | 62 |
+| Hibernating - Selective Reactivation | 47 |
+| **Total** | **2,000** |
 
-This is a starting hypothesis, not a validated ROI allocation. Test with a holdout group and track campaign cost, incremental outcomes, margin and retention before scaling. The “At Risk Active” cohort is labelled re-engagement because its average recency is 742.75 days; active subscription does not mean recent purchase.
+## Suggested campaign testing approach
+
+- **At Risk Active - Preventive Retention:** test low-friction retention messaging and monitor subsequent activity.
+- **Needs Nurturing - Engagement:** test educational or category-relevant content.
+- **Potential Loyal - Growth:** test relevant cross-sell or upgrade messaging.
+- **Cancelled and paused cohorts:** test separate win-back and reactivation journeys.
+- **Champions and Loyal cohorts:** test recognition or loyalty benefits while monitoring incremental impact.
+- **Hibernating cohorts:** begin with low-cost, selective contact and suppress where engagement is uneconomic.
+
+These are strategic hypotheses based on segment labels, not established causal effects. Use randomised holdouts where feasible. Track delivered contacts, campaign cost, response, conversion, incremental retention, margin and unsubscribe/complaint rates before scaling or allocating budget.
+
+## Important interpretation notes
+
+- Subscription status is not the same as recent purchase activity.
+- `recorded_order_value` is one associated record's `unit_price × quantity`; it is not lifetime value, profit or verified revenue.
+- The dataset does not contain campaign cost, response, uplift or control-group fields. Actual campaign ROI cannot be calculated.
+- The RFM scores are relative quintiles within this dataset; bucket boundaries and ties affect score assignment.
