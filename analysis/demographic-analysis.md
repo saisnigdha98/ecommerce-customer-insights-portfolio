@@ -1,40 +1,33 @@
 # Customer Demographic Insights
 
-Analysis uses the 1,021 chronology-eligible customers. Age and gender were populated for all rows in the Tableau-ready view.
+The updated Tableau demographic dashboard covers **2,000 customers**.
 
 ## Age distribution
 
-| Age group | Share |
-|---|---:|
-| 18–24 | 14.50% |
-| 25–34 | 16.06% |
-| 35–44 | 19.69% |
-| 45–54 | 20.08% |
-| 55+ | 29.68% |
+| Age group | Customers | Share |
+|---|---:|---:|
+| 18–24 | 258 | 12.90% |
+| 25–34 | 345 | 17.25% |
+| 35–44 | 374 | 18.70% |
+| 45–54 | 434 | 21.70% |
+| 55+ | 589 | 29.45% |
+| **Total** | **2,000** | **100.00%** |
 
-The 55+ group is the largest (about 30%); 18–24 is the smallest. The 45+ groups together represent approximately 49.76% of the eligible base.
+The 55+ group is the largest age group, while 18–24 is the smallest.
 
-## Average recorded order value by age group
+## Gender distribution
 
-| Age group | Average |
-|---|---:|
-| 55+ | 1,064.34 |
-| 35–44 | 1,064.25 |
-| 25–34 | 1,064.19 |
-| 18–24 | 1,026.65 |
-| 45–54 | 982.61 |
+| Gender | Customers | Share | Average recorded order value |
+|---|---:|---:|---:|
+| Female | 1,015 | 50.75% | 1,017.17 |
+| Male | 917 | 45.85% | 1,040.53 |
+| Other | 68 | 3.40% | 957.31 |
+| **Total** | **2,000** | **100.00%** | — |
 
-The top three groups are very similar. Age alone offers limited separation in this descriptive measure.
-
-## Gender distribution and recorded value
-
-| Gender | Customers | Share | Average recorded value | Total recorded value |
-|---|---:|---:|---:|---:|
-| Female | 521 | 51.03% | 1,026.13 | 534,616.06 |
-| Male | 466 | 45.64% | 1,067.20 | 497,316.62 |
-| Other | 34 | 3.33% | 952.46 | 32,383.61 |
-
-Male customers have the highest average recorded value; female customers have the largest total, partly reflecting their larger group size. Female customers form the majority in five of six RFM segments. These are composition statistics, not evidence of different campaign response.
+Male customers have the highest average recorded order value in this dataset. The differences are descriptive and do not establish causation or predict campaign response.
 
 ## Interpretation
-Demographic charts describe the customer base; they do not show that age or gender causes purchasing differences. The Other group is small (34 customers), so its comparisons are less stable. Do not allocate campaign budget based on demographic attributes alone. Test behavioural cohorts and measured campaign response instead.
+
+Demographic charts describe the composition of the customer base. Age and gender should not be treated as causes of purchasing behaviour or used alone to determine campaign eligibility or budget. Prioritise behavioural hypotheses and evaluate actual campaign response using controlled tests where possible.
+
+The monetary measure is a single-record `unit_price × quantity` calculation; currency is unspecified.
