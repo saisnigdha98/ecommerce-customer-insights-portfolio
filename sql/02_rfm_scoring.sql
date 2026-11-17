@@ -1,7 +1,7 @@
--- MySQL RFM scoring for chronology-eligible records.
--- Reference date: 2025-08-20 (latest plausible last-purchase date in this dataset).
--- Frequency is the supplied purchase_frequency field.
--- Monetary is one associated recorded order value, not lifetime value.
+-- MySQL RFM scoring for date-quality-passing customer records.
+-- Reference date: 2025-08-20 (fixed source snapshot cutoff).
+-- Frequency is supplied purchase_frequency; monetary is one associated record's
+-- unit_price * quantity, not lifetime value.
 
 CREATE OR REPLACE VIEW ecommerce_rfm_scored AS
 WITH eligible_customers AS (
@@ -20,9 +20,9 @@ WITH eligible_customers AS (
 recency_scored AS (
     SELECT
         customer_id,
-        DATEDIFF('2025-08-20', last_purchase_date_clean) AS recency_days,
+        TO_DAYS('2025-08-20') - TO_DAYS(last_purchase_date_clean) AS recency_days,
         NTILE(5) OVER (
-            ORDER BY DATEDIFF('2025-08-20', last_purchase_date_clean), customer_id
+            ORDER BY TO_DAYS('2025-08-20') - TO_DAYS(last_purchase_date_clean), customer_id
         ) AS r_quintile
     FROM eligible_customers
 ),
@@ -45,11 +45,11 @@ SELECT
     r.recency_days,
     f.purchase_frequency,
     m.monetary_value,
-    6 - r.r_quintile AS R_score,
-    6 - f.f_quintile AS F_score,
-    6 - m.m_quintile AS M_score,
-    CONCAT(6-r.r_quintile, 6-f.f_quintile, 6-m.m_quintile) AS RFM_score,
-    (6-r.r_quintile) + (6-f.f_quintile) + (6-m.m_quintile) AS RFM_total_score,
+    (6-r.r_quintile) AS R_score,
+    (6-f.f_quintile) AS F_score,
+    (6-m.m_quintile) AS M_score,
+    CONCAT((6-r.r_quintile),(6-f.f_quintile),(6-m.m_quintile)) AS RFM_score,
+    (6-r.r_quintile)+(6-f.f_quintile)+(6-m.m_quintile) AS RFM_total_score,
     e.subscription_status,
     e.cancellations_count,
     e.country,
