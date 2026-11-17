@@ -1,9 +1,12 @@
 # Tableau Public Dashboards
 
-Add the published Tableau Public URLs here after verifying each URL from the Tableau Public profile.
+Published Tableau Public dashboards for the E-commerce Customer Insights & Churn Analysis portfolio project.
 
-- Customer Segmentation & Campaign Prioritisation — URL pending.
-- Customer Demographic Insights — URL pending.
-- Forecast Model Evaluation — URL pending.
+1. [Customer Segmentation & Campaign Prioritisation](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/CustomerSegmentation-Overview#1)
+2. [Customer Demographic Insights](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/CustomerDemographicInsights_#1)
+3. [Tableau Sales Forecast](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/TableauSalesForecast_)
+4. [Forecast Model Evaluation](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/ForecastModelEvaluationDashboard)
 
-Do not substitute local workbook paths or unpublished drafts for public links.
+The customer dashboards reflect the updated 2,000-customer population. Forecasting uses the 2,000 source records aggregated into 60 monthly observations.
+
+The forecast evaluation KPIs are not a like-for-like comparison: the naïve rolling metrics and Tableau forecast quality metrics use different evaluation procedures/periods. See `analysis/sales-forecasting.md`.
