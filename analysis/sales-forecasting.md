@@ -1,15 +1,17 @@
 # Exploratory Forecasting of Monthly Recorded Order Value
 
 ## Objective and scope
-This is a forecasting exercise within the same portfolio project. The target is **monthly recorded order value**, not verified business revenue. It uses all 2,000 source records; RFM date eligibility is not applied.
+
+The target is **monthly recorded order value**, not verified business revenue. The monthly aggregation uses all 2,000 source records; RFM date eligibility is not applied. The source has one customer-associated record per customer, so monthly totals may reflect changes in record counts rather than underlying business growth.
 
 ## Monthly aggregation
-The source was aggregated into 60 consecutive calendar months from September 2020 to August 2025.
-- Total recorded order value: 2,051,690.65.
-- Average monthly record count: 33.33.
-- Average monthly recorded value: 34,194.84.
-- Minimum monthly recorded value: 369.55.
-- Maximum monthly recorded value: 72,956.86 (January 2024).
+
+The source was aggregated into 60 calendar months from September 2020 to August 2025.
+- Total recorded order value: **2,051,690.65**.
+- Average monthly record count: **33.33**.
+- Average monthly recorded value: **34,194.84**.
+- Minimum monthly recorded value: **369.55**.
+- Maximum monthly recorded value: **72,956.86** (January 2024).
 
 Annual summary:
 
@@ -25,6 +27,7 @@ Annual summary:
 Monthly totals rise alongside the number of records; average value per record is comparatively stable. This should not automatically be interpreted as business growth.
 
 ## Naïve baseline
+
 The naïve forecast uses the previous month's actual value as the next month's forecast: `Forecast(t) = Actual(t - 1)`.
 
 August 2025:
@@ -33,10 +36,11 @@ August 2025:
 - Absolute error: 15,325.66.
 - Percentage error: approximately 39.44%.
 
-Rolling one-month-ahead worksheet metrics: **MAE 7,122** and **MAPE 30.27%**. The first month has no previous-month forecast.
+The evaluation dashboard displays rolling one-month-ahead worksheet metrics: **MAE 7,122** and **MAPE 30.27%**.
 
 ## Tableau automatic forecast
-Settings: exactly 6 months, Automatic model, 95% prediction interval, Ignore last 1 month. Model basis: September 2020–July 2025. Forecast display: August 2025–January 2026.
+
+Settings: six months, Automatic model, 95% prediction interval, Ignore last 1 month. Model basis: September 2020–July 2025. Forecast display: August 2025–January 2026.
 
 Selected model: additive level, additive trend, no seasonality.
 - RMSE: 7,991
@@ -55,6 +59,7 @@ August holdout errors:
 The Tableau absolute error is about 832 lower for this single month. One holdout month is not enough to establish general model superiority.
 
 Tableau point forecasts:
+
 | Month | Forecast |
 |---|---:|
 | Sep 2025 | 54,257 |
@@ -65,8 +70,19 @@ Tableau point forecasts:
 
 These are model outputs, not observed future results.
 
-## Metric comparability
-The four KPI cards show naïve MAE 7,122, naïve MAPE 30.27%, Tableau MAE 5,440 and Tableau MAPE 34.7%. The rolling naïve calculations and Tableau's Describe Forecast quality metrics use different evaluation procedures/periods. They are not a like-for-like comparison. A fair comparison requires identical forecast origins, holdout months and metric formulas for both methods.
+## Forecast evaluation dashboard
+
+The published KPI dashboard displays:
+
+| Metric | Value |
+|---|---:|
+| Naïve Baseline MAE | 7,122 |
+| Naïve Baseline MAPE | 30.27% |
+| Tableau Forecast MAE | 5,440 |
+| Tableau Forecast MAPE | 34.70% |
+
+**Do not interpret these four cards as a like-for-like comparison.** The rolling naïve calculations and Tableau's Describe Forecast quality metrics use different evaluation procedures/periods. The MAE and MAPE results point in different directions, and the metric values should not be used to claim that one method is uniformly better. A fair comparison requires identical forecast origins, holdout months and metric formulas for both methods.
 
 ## Limitations and next steps
-The static source has one associated record per customer; monthly totals may largely reflect changing record counts. A stronger operational forecast requires complete transaction history, a clearly defined currency and target, multiple rolling-origin backtests, common evaluation windows and residual analysis.
+
+A stronger operational forecast requires complete transaction history, a clearly defined currency and target, multiple rolling-origin backtests, common evaluation windows and residual analysis.
