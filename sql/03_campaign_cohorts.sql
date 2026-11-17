@@ -12,7 +12,7 @@ SELECT
         WHEN customer_segment = 'Champions'
             THEN 'Champions - Reactivation'
         WHEN customer_segment = 'At Risk / Win-back' AND subscription_status = 'active'
-            THEN 'At Risk Active - Re-engagement'
+            THEN 'At Risk Active - Preventive Retention'
         WHEN customer_segment = 'At Risk / Win-back' AND subscription_status = 'paused'
             THEN 'At Risk Paused - Re-engagement'
         WHEN customer_segment = 'At Risk / Win-back' AND subscription_status = 'cancelled'
@@ -43,29 +43,13 @@ SELECT
     RFM_total_score
 FROM ecommerce_customer_segments;
 
--- Cohort summary. Value concentration index is descriptive, not ROI.
-WITH cohort_totals AS (
-    SELECT campaign_cohort,
-           COUNT(*) AS customers,
-           SUM(monetary_value) AS cohort_recorded_value
-    FROM ecommerce_campaign_cohorts
-    GROUP BY campaign_cohort
-),
-grand_totals AS (
-    SELECT SUM(customers) AS all_customers,
-           SUM(cohort_recorded_value) AS all_recorded_value
-    FROM cohort_totals
-)
-SELECT
-    c.campaign_cohort,
-    c.customers,
-    ROUND(100 * c.customers / g.all_customers, 2) AS customer_share_pct,
-    ROUND(c.cohort_recorded_value, 2) AS recorded_order_value,
-    ROUND(100 * c.cohort_recorded_value / g.all_recorded_value, 2) AS value_share_pct,
-    ROUND(
-        (c.cohort_recorded_value / g.all_recorded_value) /
-        (c.customers / g.all_customers), 2
-    ) AS value_concentration_index
-FROM cohort_totals c
-CROSS JOIN grand_totals g
-ORDER BY c.customers DESC;
+-- Cohort count validation.
+SELECT campaign_cohort, COUNT(*) AS customers
+FROM ecommerce_campaign_cohorts
+GROUP BY campaign_cohort
+ORDER BY customers DESC;
+
+-- Validate full population.
+SELECT COUNT(*) AS records,
+       COUNT(DISTINCT customer_id) AS unique_customers
+FROM ecommerce_campaign_cohorts;
