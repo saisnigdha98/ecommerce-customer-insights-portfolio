@@ -1,6 +1,6 @@
 # Tableau Dashboard Screenshots
 
-Add the five reviewed Tableau screenshots to this folder using these filenames:
+The five PNG files in this folder are presentation screenshots for the E-commerce Customer Insights & Churn Analysis portfolio project.
 
 | Filename | Screenshot |
 |---|---|
@@ -10,6 +10,6 @@ Add the five reviewed Tableau screenshots to this folder using these filenames:
 | `sales-forecast.png` | Tableau Sales Forecast |
 | `forecast-model-evaluation.png` | Forecast Model Evaluation |
 
-Use PNG files where possible. These are presentation screenshots only; do not upload customer-level records, source CSVs, credentials, or other private data.
+These images are embedded as previews in [the Tableau dashboards README](../README.md). Use the published Tableau Public links there to explore the interactive dashboards.
 
-Once the image files are uploaded, the dashboard README can embed them with relative Markdown image paths.
+These are presentation screenshots only. Do not add customer-level records, source CSVs, credentials, or other private data to this folder.
