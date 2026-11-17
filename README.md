@@ -88,6 +88,48 @@ All 2,000 source records were aggregated into 60 calendar-month observations fro
 3. [Tableau Sales Forecast](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/TableauSalesForecast_)
 4. [Forecast Model Evaluation](https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/ForecastModelEvaluationDashboard)
 
+## Dashboard previews
+
+Select a preview to open its interactive Tableau Public dashboard. The screenshots are included here so the project can be reviewed directly from the repository.
+
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/CustomerSegmentation-Overview#1">
+        <img src="dashboards/images/customer-segmentation.png" width="420" alt="Customer Segmentation and Campaign Prioritisation dashboard" />
+      </a>
+      <br /><strong>Customer Segmentation & Campaign Prioritisation</strong>
+    </td>
+    <td align="center">
+      <a href="https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/CustomerDemographicInsights_#1">
+        <img src="dashboards/images/customer-demographics.png" width="420" alt="Customer Demographic Insights dashboard" />
+      </a>
+      <br /><strong>Customer Demographic Insights</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <img src="dashboards/images/monthly-value-trend.png" width="420" alt="Monthly Recorded Value Trend dashboard screenshot" />
+      <br /><strong>Monthly Recorded Value Trend</strong>
+    </td>
+    <td align="center">
+      <a href="https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/TableauSalesForecast_">
+        <img src="dashboards/images/sales-forecast.png" width="420" alt="Tableau Sales Forecast dashboard" />
+      </a>
+      <br /><strong>Tableau Sales Forecast</strong>
+    </td>
+  </tr>
+  <tr>
+    <td align="center">
+      <a href="https://public.tableau.com/app/profile/snigdha.nandury/viz/Book1_17947202352600/ForecastModelEvaluationDashboard">
+        <img src="dashboards/images/forecast-model-evaluation.png" width="420" alt="Forecast Model Evaluation dashboard" />
+      </a>
+      <br /><strong>Forecast Model Evaluation</strong>
+    </td>
+    <td></td>
+  </tr>
+</table>
+
 ## Repository guide
 
 | Folder | Contents |
@@ -95,7 +137,7 @@ All 2,000 source records were aggregated into 60 calendar-month observations fro
 | `sql/` | MySQL preparation, RFM, campaign cohort, Tableau-ready and monthly forecast scripts |
 | `analysis/` | Segmentation, demographic and forecasting findings |
 | `documentation/` | Methodology, data dictionary and limitations |
-| `dashboards/` | Published Tableau Public dashboard links |
+| `dashboards/` | Published Tableau Public dashboard links and screenshot previews |
 
 ## Reproducibility
 
